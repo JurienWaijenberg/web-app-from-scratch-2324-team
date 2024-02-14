@@ -1,74 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Fetch the JSON data using fetch API
-    Promise.all([
-        fetch('https://jurienwaijenberg.github.io/web-app-from-scratch-2324/info.json').then(resp => resp.json()),
-        fetch('https://raw.githubusercontent.com/LisaxLF/web-app-from-scratch-2324/main/info.json').then(resp => resp.json()),
-      ]).then(console.log)
+async function main() {
+    const fetches = await getData();
+    await renderData(fetches);
+}
 
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Once the data is successfully fetched, display it on the page
-        displayData(data);
-    })
-    .catch(error => {
-        // If there's an error fetching the data, log the error
+async function getData() {
+    try {
+        // Fetch Jurien's JSON data
+        const responseJurien = await fetch('https://jurienwaijenberg.github.io/web-app-from-scratch-2324/info.json');
+        const dataJurien = await responseJurien.json();
+
+        // Fetch data Lisa from the JSON file
+        const responseLisa = await fetch('https://raw.githubusercontent.com/LisaxLF/web-app-from-scratch-2324/main/info.json');
+        const dataLisa = await responseLisa.json();
+        
+        console.log(dataJurien, dataLisa);
+
+        return [...dataJurien, dataLisa]; // Combine both datasets into one array
+    } catch (error) {
         console.error('Error fetching JSON data:', error);
-    });
-});
+    }
+}
 
-function displayData(data) {
-    // Assuming the JSON structure is an array of objects, you can iterate over it
-    data.forEach(function(item) {
-
-        // Create an HTML element to display each item
-        var listItem = document.createElement('section');
-        listItem.classList.add('motor');
-        listItem.setAttribute('id', item.id);
-
-            // Assuming the JSON structure has 'name' and 'age' properties
-            var lastnameParagraph = document.createElement('h3');
-            lastnameParagraph.textContent = item.lastName;
-            listItem.appendChild(lastnameParagraph);
-            lastnameParagraph.classList.add('background-text');
-
-            var profile = document.createElement('section');
-            profile.classList.add('max-width');
-            profile.classList.add('row');
-            listItem.appendChild(profile);
-
-                var profileInfo = document.createElement('section');
-                profileInfo.classList.add('profile-info');
-                profile.appendChild(profileInfo);
-
-                    var nameParagraph = document.createElement('h2');
-                    nameParagraph.textContent = item.firstName;
-                    profileInfo.appendChild(nameParagraph);
-
-                    var ul = document.createElement('ul');
-                    profileInfo.appendChild(ul);
-
-                        var ageParagraph = document.createElement('li');
-                        ageParagraph.textContent = item.age;
-                        ul.appendChild(ageParagraph);
-
-                        var city = document.createElement('li');
-                        city.textContent = item.city;
-                        ul.appendChild(city);
-
-                var profileAvatar = document.createElement('section');
-                profileAvatar.classList.add('profile-picture');
-                profile.appendChild(profileAvatar);    
-
-                    var avatar = document.createElement('img');
-                    avatar.src = item.avatar_url;
-                    profileAvatar.appendChild(avatar);
-
-        // Append the created element to the data-container element
-        document.getElementById('repeater').appendChild(listItem);
+async function renderData(datasets) {
+    // render data
+    const app = document.getElementById('repeater');
+    
+    datasets.forEach(data => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <h1>${data.firstName}</h1>
+            <p>${data.lastName}</p>
+            <p>Age: ${data.age}</p>
+            <p>City: ${data.city}</p>
+        `;
+        app.appendChild(div);
     });
 }
+
+main()
