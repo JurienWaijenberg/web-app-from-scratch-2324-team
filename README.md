@@ -1,5 +1,19 @@
-# TEAM app - Web App From Scratch @cmda-minor-web 2023 - 2024
+![Schermafbeelding website](https://github.com/JurienWaijenberg/web-app-from-scratch-2324/blob/0d5d68a46755d9298813f8a8b338dda16b55263b/docs/images/Scherm%C2%ADafbeelding-website.jpg)
 
-In de team app verzamel je de informatie van je teamleden en toon je ze op een toffe manier.
-De gegevens per teamlid haal je dynamisch op door middel van een samen vastgesteld dataformaat (json, microdata).
-Je zorgt ervoor dat in ./docs/team.json de juiste urls naar de persoonlijke pagina's staat. Die heb je nodig voor de basis van de team app, maar die gebruiken we ook voor een verzamelsite van alle team apps.
+## Beschrijving
+Voor de team app van WAFS hebben we als groep een website gemaakt. Op deze website wordt data opgehaald van de persoonlijke website van alle team leden. Deze dat komt dus data komt dus uit verschillende API's. In de website is de data van Lisa en Juriën te zien. Als je met je muis hoverd over een van de twee kaarten draaid deze om. Op de achterkant van de kaart zijn onze 2 truths one lie the zien. Je kan hier op klikken om er achter te komen of je het goed hebt. Bekijk de [changelog](https://github.com/JurienWaijenberg/web-app-from-scratch-2324-team/blob/main/changelog.md) voor het hele proces.
+
+## Link naar de live demo
+
+## Installeren
+
+1. Clone de repository
+```
+git clone https://github.com/JurienWaijenberg/web-app-from-scratch-2324-team.git
+```
+2. Open de map in een code editor en bekijk de code.
+
+## Features
+* Data uit verschillende API's
+* 2 truths one lie functie
+* Flipboxes
