@@ -14,7 +14,7 @@ In week twee hebben we besloten om het concept te versimpelen zodat het project 
 
 Lisa heeft hier een ontwerp voor gemaakt.
 
-![Schermafbeelding website](https://github.com/JurienWaijenberg/web-app-from-scratch-2324-team/blob/4837fbc72af195c140e10d8220dde6923a100593/docs/images/Scherm%C2%ADafbeelding-groeps-app.jpg)
+![Schermafbeelding website](https://github.com/JurienWaijenberg/web-app-from-scratch-2324-team/blob/4d5e1049a781a942637f9855cb48bca7f7389270/docs/images/Schermafbeelding-ontwerp.jpeg)
 
 Jurien heeft vervolgens dit ontwerp in code omgezet. Nu de blokken gecodeert en gestyled zijn heeft Lisa het script geschreven om de data op te halen en te verwerken op de home pagina.
 
@@ -93,7 +93,7 @@ async function renderData(teamMembers) {
 }
 ```
 
-Om het project af te ronden heeft Lisa het ontwerp aangepast waardoor de website een stuk aantrekkelijker is geworden. Daarnaast heeft ze een functie geschreven waardoor je kan klikken op de 2 truths one lie zodat de gebruiker kan zien wat wat is. Dit maakt het project echt af. De functie is hieronder te zien.
+Om het project af te ronden heeft Lisa het ontwerp aangepast waardoor de website visueel aantrekkelijker is geworden. Daarnaast heeft ze een functie geschreven waardoor je kan klikken op de 2 truths one lie zodat de gebruiker kan zien wat wat is. Dit maakt het project echt af. De functie is hieronder te zien.
 
 ```js
 async function main() {
