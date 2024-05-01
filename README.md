@@ -5,6 +5,8 @@ Voor de team app van WAFS hebben we als groep een website gemaakt. Op deze websi
 
 ## Link naar de live demo
 
+Bekijk de [live demo](https://jurienwaijenberg.github.io/web-app-from-scratch-2324-team/)
+
 ## Installeren
 
 1. Clone de repository
